@@ -1,0 +1,16 @@
+export const commonContents = {
+  signIn: 'Sign in',
+  signUp: 'Sign up',
+  login: 'Login',
+  continueGoogle: 'Continue with Google',
+  or: 'or',
+  email: 'Email',
+  emailId: 'Email ID',
+  password: 'Password',
+  emailRequiredError: 'Please enter your email',
+  emailValidError: 'Please enter a valid email address',
+  passRequiredError: 'Please enter your password',
+  register: 'Register',
+  generalNetworkErrorMessage: 'Network error. Please try again later.',
+  generalSuccesMessage: 'Done.',
+}
