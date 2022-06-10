@@ -50,7 +50,7 @@
     "flow-start": "flow start",
     "flow-stop": "flow stop",
     "eslint": "eslint --fix --ext .jsx --ext .js src/**/*.js",
-    "prettier": "prettier --write --ext .jsx --ext .js src/**/*.js",
+    "prettierx:all": "prettier --write src/**/*{.ts,.tsx}",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "postinstall": "electron-builder install-app-deps",
