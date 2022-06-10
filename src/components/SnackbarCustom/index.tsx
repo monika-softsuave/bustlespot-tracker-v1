@@ -3,7 +3,7 @@ import { QueryClient, useQuery, useQueryClient } from 'react-query'
 import { Snackbar } from '@mui/material'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 
-import { QueryKey } from 'src/constants/http'
+import { QueryKey } from 'src/constants/queryKey'
 
 export interface SnackbarConfiguration {
   type?: SnackbarType

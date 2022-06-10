@@ -16,8 +16,8 @@ export const useFieldHook = (name: string) => {
 
 export const useDisabled = (customKeys?: string[]): boolean => {
   const { getValues } = useFormContext()
-  const fieldValues = getValues();
-  const availableKeys = Object.keys(fieldValues).filter(key => customKeys?.includes(key))
+  const fieldValues = getValues()
+  const availableKeys = Object.keys(fieldValues).filter((key) => customKeys?.includes(key))
   const payload = useWatch({ name: isEmpty(customKeys) ? Object.keys(fieldValues) : availableKeys })
 
   let isDisabled = false
@@ -25,7 +25,7 @@ export const useDisabled = (customKeys?: string[]): boolean => {
     if (isEmpty(payload)) {
       isDisabled = true
     } else {
-      payload.forEach(value => {
+      payload.forEach((value) => {
         if (isEmpty(value)) {
           isDisabled = true
         }

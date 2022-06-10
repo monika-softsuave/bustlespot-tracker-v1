@@ -9,7 +9,6 @@ import Login from './screens/login'
 const { ipcRenderer, process } = window
 
 const App = () => {
-  
   useEffect(() => {
     ipcRenderer.on('notification', sendNotification)
     ipcRenderer.on('SetWindowBorder', setWindowBorderStyle)
@@ -51,7 +50,7 @@ const App = () => {
   return (
     <AppContainer className='App'>
       <AppWrapper>
-        <CustomRoutes/>
+        <CustomRoutes />
       </AppWrapper>
     </AppContainer>
   )

@@ -1,12 +1,13 @@
 // @flow
 
 import React from 'react'
-import DoNotDisturbOnOutlinedIcon from '@mui/icons-material/DoNotDisturbOnOutlined';
-import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import DoNotDisturbOnOutlinedIcon from '@mui/icons-material/DoNotDisturbOnOutlined'
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew'
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
 
-import logOut from 'src/assets/icons/LogOut.svg'
 import BustleLogo from 'src/assets/images/logoWhite.png'
 import { ActionWrapper, IconButton, LogoWrapper, Title, Wrapper } from './index.styled'
+import { isUserAuthorized } from 'src/lib/auth'
 
 // @ts-ignore: Unreachable code error
 const { remote, ipcRenderer, process } = window
@@ -16,16 +17,15 @@ let mouseY: any
 let checkMouseUpEvt = false
 
 type Props = {
-  isAuthenticated: Boolean
   getTimerStatus: Boolean
 }
 
-const Frame = ({ isAuthenticated, getTimerStatus }: Props) => {
+const Frame = ({ getTimerStatus }: Props) => {
+  const isAuthenticated = isUserAuthorized()
   const ele = document.getElementsByClassName('customFrameParentDiv')
   const handleClose = () => {
     if (process.platform === 'darwin') {
       remote.getCurrentWindow().hide()
-
       return
     }
 
@@ -70,7 +70,7 @@ const Frame = ({ isAuthenticated, getTimerStatus }: Props) => {
       <ActionWrapper>
         {isAuthenticated && (
           <IconButton onClick={handleOnLogOut}>
-            <img style={{ width: '57%' }} alt='logo' src={logOut} />
+            <PowerSettingsNewIcon style={{ fontSize: '1.8rem' }} />
           </IconButton>
         )}
         <IconButton onClick={() => remote.getCurrentWindow().minimize()}>

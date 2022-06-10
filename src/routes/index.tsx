@@ -34,7 +34,7 @@ const CustomRoutes = () => {
             path={path}
             element={
               <RequireAuth>
-                <Component  />
+                <Component />
               </RequireAuth>
             }
           />

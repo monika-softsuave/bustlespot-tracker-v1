@@ -4,8 +4,8 @@ import { useQuery } from 'react-query'
 import { getOrgainzation } from 'src/api/organization'
 import { QueryKey } from 'src/constants/queryKey'
 import { IOrganisation } from 'src/types/organization'
-import { Wrapper } from './index.styled'
 import List from './List'
+import { Wrapper } from './index.styled'
 
 export function Organization() {
   const { data: response, isLoading } = useQuery(QueryKey.GET_ORGANIZATIONS, getOrgainzation)
@@ -22,7 +22,6 @@ export function Organization() {
             <List organization={organization} />
           </React.Fragment>
         ))
-        
       )}
     </Wrapper>
   )

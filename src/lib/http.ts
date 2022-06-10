@@ -1,6 +1,7 @@
-import axios from 'axios'
-import { get } from 'lodash'
+import axios, { AxiosRequestConfig } from 'axios'
+import { get, omit } from 'lodash'
 import { commonContents } from 'src/contents/common'
+import { getAuthToken } from './storage'
 
 const baseUrl = process.env.REACT_APP_BASE_URL
 
@@ -18,5 +19,19 @@ const http = axios.create({
     'Content-type': 'application/json',
   },
 })
+
+http.interceptors.request.use(
+  function (config: AxiosRequestConfig) {
+    if (!config?.params?.withoutAuth) {
+      config.headers.authorization = 'token ' + getAuthToken()
+    }
+
+    config.params = omit(config.params, 'withoutAuth')
+    return config
+  },
+  function (error) {
+    return Promise.reject(error)
+  },
+)
 
 export default http

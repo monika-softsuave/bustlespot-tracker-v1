@@ -1,7 +1,7 @@
 import { IRoleResp } from './accounts'
 
 export interface IOrganisationResp {
-    organisationList:IOrganisation[]
+  organisationList: IOrganisation[]
 }
 
 export interface IOrganisation {
