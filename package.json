@@ -48,7 +48,6 @@
     "flow": "flow",
     "flow-start": "flow start",
     "flow-stop": "flow stop",
-    "eslint": "eslint --fix --ext .jsx --ext .js src/**/*.js",
     "prettierx:all": "prettier --write src/**/*{.ts,.tsx}",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
@@ -56,9 +55,6 @@
     "food": "tsc"
   },
   "main": "./public/electron.js",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -83,12 +79,6 @@
     "electron": "^19.0.4",
     "electron-builder": "^23.0.3",
     "electron-rebuild": "^3.2.7",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
     "flow-bin": "^0.116.1",
     "prettier": "^2.6.2",
     "react-scripts": "^3.4.4",
