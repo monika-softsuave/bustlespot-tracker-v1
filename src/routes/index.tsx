@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { PRIVATE_ROUTES, PUBLIC_ROUTES } from 'src/routes/routes'
 import { ROUTE_PATH } from 'src/types/route'
 import { isUserAuthorized } from 'src/lib/auth'
