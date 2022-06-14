@@ -9,6 +9,8 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import theme from './lib/theme'
 import { queryClient } from './lib/queryClient'
+import Frame from './components/Frame'
+import SnackbarCustom from './components/SnackbarCustom'
 
 const rootElement = document.getElementById('root')
 
@@ -18,6 +20,8 @@ if (rootElement) {
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
           <CssBaseline />
+          <Frame getTimerStatus={false} />
+          <SnackbarCustom />
           <App />
         </StyledEngineProvider>
       </ThemeProvider>

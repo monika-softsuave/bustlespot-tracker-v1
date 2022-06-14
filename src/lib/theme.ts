@@ -14,7 +14,6 @@ const theme = createTheme({
     },
   },
   components: {
-    
     MuiCssBaseline: {
       styleOverrides: {
         html: {
@@ -38,10 +37,21 @@ const theme = createTheme({
           fontFamily: 'source-code-pro,Menlo,Monaco,Consolas,`Courier New`,monospace',
         },
         '#hubspot-messages-iframe-container': {
-          zIndex: ('9996 !important' as unknown) as number,
+          zIndex: '9996 !important' as unknown as number,
         },
         '.rpv-core-page-layer': {
           margin: '0 auto 20px',
+        },
+        '&::-webkit-scrollbar': {
+          width: '0.2em',
+        },
+        '&::-webkit-scrollbar-track': {
+          boxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)',
+          webkitBoxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          backgroundColor: '#fff',
+          outline: '1px solid slategrey',
         },
       },
     },
@@ -53,16 +63,6 @@ const theme = createTheme({
           '-moz-osx-font-smoothing': 'grayscale',
         },
       },
-    },
-    MuiSnackbar:{
-      styleOverrides:{
-         root:{
-           left:'unset',
-           top:'50px',
-           bottom: 'unset',
-           right: '8px',
-         }
-      }
     },
     MuiButton: {
       defaultProps: {
@@ -91,9 +91,9 @@ const theme = createTheme({
           textAlign: 'center',
           transition: 'background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
         },
-        edgeEnd:{
-          marginRight:'0px',
-        }
+        edgeEnd: {
+          marginRight: '0px',
+        },
       },
     },
     MuiLink: {
@@ -158,6 +158,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          position: 'sticky',
+          background: '#fff',
+          color: '#f23c4b',
+        },
+      },
+    },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
@@ -170,6 +179,21 @@ const theme = createTheme({
           '&$error': {
             color: '#D0021B',
           },
+        },
+      },
+    },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {},
+      },
+    },
+    MuiSnackbar: {
+      styleOverrides: {
+        root: {
+          left: 'unset',
+          top: '50px',
+          bottom: 'unset',
+          right: '8px',
         },
       },
     },

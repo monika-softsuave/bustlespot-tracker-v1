@@ -9,7 +9,3 @@ export const HttpStatus = {
   InternalServerError: 500,
   BadGateway: 502,
 }
-
-export const QueryKey = {
-  SNACKBAR_CONFIGURATION: 'snackbar_configuration',
-}

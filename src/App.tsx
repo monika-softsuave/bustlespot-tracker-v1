@@ -3,14 +3,12 @@ import React, { useEffect } from 'react'
 
 import AppIcon from 'src/assets/images/logoRed.png'
 import { AppWrapper, AppContainer } from './App.styled'
-import Frame from './components/Frame'
-import SnackbarCustom from './components/SnackbarCustom'
+import CustomRoutes from './routes'
 import Login from './screens/login'
 // @ts-ignore: Unreachable code error
 const { ipcRenderer, process } = window
 
 const App = () => {
-  
   useEffect(() => {
     ipcRenderer.on('notification', sendNotification)
     ipcRenderer.on('SetWindowBorder', setWindowBorderStyle)
@@ -51,10 +49,8 @@ const App = () => {
 
   return (
     <AppContainer className='App'>
-      <Frame isAuthenticated={false} getTimerStatus={false} />
-      <SnackbarCustom />
       <AppWrapper>
-        <Login />
+        <CustomRoutes />
       </AppWrapper>
     </AppContainer>
   )
