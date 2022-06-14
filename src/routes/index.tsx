@@ -28,7 +28,7 @@ const CustomRoutes = () => {
           <Route key={path} path={path} element={<Component />} />
         ))}
 
-        {PRIVATE_ROUTES.map(({ path, Component, name }) => (
+        {PRIVATE_ROUTES.map(({ path, Component }) => (
           <Route
             key={path}
             path={path}

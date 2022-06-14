@@ -40,7 +40,7 @@ function LoginForm() {
         navigate(ROUTE_PATH.organization)
       },
 
-      onSuccess: (response) => {
+      onSuccess: (response: any) => {
         updateAuthToken(get(response, 'data.data.token'))
         showSnackBar(queryClient, {
           message: getSuccessMessage(response),
@@ -50,6 +50,7 @@ function LoginForm() {
       },
     })
   }
+
   return (
     <Wrapper>
       <TitleWrapper>
