@@ -1,6 +1,7 @@
-import { CircularProgress } from '@mui/material'
 import React from 'react'
 import { useQuery } from 'react-query'
+import { isEmpty } from 'lodash'
+import { CircularProgress, Typography } from '@mui/material'
 import { getOrgainzation } from 'src/api/organization'
 import { QueryKey } from 'src/constants/queryKey'
 import { IOrganisation } from 'src/types/organization'
@@ -15,8 +16,9 @@ export function Organization() {
     <Wrapper>
       {isLoading ? (
         <CircularProgress color='secondary' />
+      ) : organizationList && isEmpty(organizationList) ? (
+        <Typography>No organization found</Typography>
       ) : (
-        organizationList &&
         organizationList.map((organization: IOrganisation) => (
           <React.Fragment key={organization.organisationId}>
             <List organization={organization} />
