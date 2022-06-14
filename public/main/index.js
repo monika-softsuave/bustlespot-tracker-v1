@@ -1,6 +1,5 @@
 /* eslint-disable  */
 
-const ioHook = require('iohook')
 const { Menu, ipcMain } = require('electron')
 const path = require('path')
 const activeWin = require('active-win')
@@ -29,19 +28,6 @@ global.projectInfo = {
 }
 global.activeWinData = { data: '' }
 
-// keyboard and mouse listener
-ioHook.on('mouseclick', (event) => {
-  setKeyboardAndMouseCount('mouse')
-})
-ioHook.on('keydown', (event) => {
-  setKeyboardAndMouseCount('key')
-})
-ioHook.on('mousewheel', (event) => {
-  setKeyboardAndMouseCount('mouse')
-})
-ioHook.on('mousemove', (event) => {
-  setKeyboardAndMouseCount('mouse')
-})
 
 function setKeyboardAndMouseCount(action) {
   const obj = global.keyboardAndMouseEvent
@@ -136,9 +122,9 @@ function getTrayTemplate(mainWindow, action, quitCallBack) {
 
 function handleIohookEvent(event, msg) {
   if (msg === 'start') {
-    ioHook.start()
+    // ioHook.start()
   } else {
-    ioHook.stop()
+    // ioHook.stop()
   }
 }
 
