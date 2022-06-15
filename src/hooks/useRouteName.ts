@@ -1,16 +1,15 @@
-import React, { useMemo } from 'react'
-import { useLocation } from 'react-router'
-import { PRIVATE_ROUTES, PUBLIC_ROUTES, RouterConfig } from 'src/routes/routes'
+import { useMemo } from 'react'
+import { matchRoutes, useLocation } from 'react-router'
 
-function useRouteName(): string {
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from 'src/routes/routes'
+
+function useRouteName() {
   const location = useLocation()
+
   const name = useMemo(() => {
-    const matchName = (route: RouterConfig) => {
-      return route.path === location.pathname
-    }
-    const matchedRoute: RouterConfig =
-      PRIVATE_ROUTES.find(matchName) || PUBLIC_ROUTES.find(matchName) || PUBLIC_ROUTES[0]
-    return matchedRoute.name
+    const match = matchRoutes([...PRIVATE_ROUTES, ...PUBLIC_ROUTES], location)
+
+    return match[0].route.name || 'Menu'
   }, [location])
 
   return name

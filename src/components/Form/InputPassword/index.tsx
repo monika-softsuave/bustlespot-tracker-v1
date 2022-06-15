@@ -16,7 +16,7 @@ interface Props extends StandardTextFieldProps {
 
 const InputPassword = ({ name, rules, maxLength, helperText, defaultValue = '', ...props }: Props) => {
   const [showPassword, setShowPassword] = useState(false)
-  const handleMouseDownPassword = useCallback((event: any) => {
+  const handleMouseDownPassword = useCallback((event: MouseEvent) => {
     event.preventDefault()
   }, [])
   const handleClickShowPassword = useCallback(() => {

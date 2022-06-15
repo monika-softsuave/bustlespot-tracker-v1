@@ -9,25 +9,25 @@ import Login from './screens/login'
 const { ipcRenderer, process } = window
 
 const App = () => {
-  useEffect(() => {
-    ipcRenderer.on('notification', sendNotification)
-    ipcRenderer.on('SetWindowBorder', setWindowBorderStyle)
+  // useEffect(() => {
+  //   ipcRenderer.on('notification', sendNotification)
+  //   ipcRenderer.on('SetWindowBorder', setWindowBorderStyle)
 
-    return () => {
-      ipcRenderer.removeListener('notification', sendNotification)
-      ipcRenderer.removeListener('SetWindowBorder', setWindowBorderStyle)
-    }
-  }, [])
+  //   return () => {
+  //     ipcRenderer.removeListener('notification', sendNotification)
+  //     ipcRenderer.removeListener('SetWindowBorder', setWindowBorderStyle)
+  //   }
+  // }, [])
 
   // @ts-ignore: Unreachable code error
-  const sendNotification = (_, msg) => {
-    const icon = process.platform === 'darwin' ? '' : AppIcon
+  // const sendNotification = (_, msg) => {
+  //   const icon = process.platform === 'darwin' ? '' : AppIcon
 
-    new Notification('BUSTLE SPOT', {
-      body: msg,
-      icon: icon,
-    })
-  }
+  //   new Notification('BUSTLE SPOT', {
+  //     body: msg,
+  //     icon: icon,
+  //   })
+  // }
   // @ts-ignore: Unreachable code error
   const setWindowBorderStyle = (_, type) => {
     const htmlStyle = document.getElementsByTagName('html')

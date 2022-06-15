@@ -10,7 +10,6 @@ const {
 } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
-const ioHook = require('iohook')
 const preloadScript = path.join(__dirname, './main/preload.js');
 
 const disableShortCutDataArray = [
@@ -163,8 +162,6 @@ function createWindow() {
         return
       }
     }
-    // will remove all listener
-    ioHook.stop()
     mainWindow.webContents.eventNames().forEach((n) => {
       mainWindow.webContents.removeAllListeners(n)
     })

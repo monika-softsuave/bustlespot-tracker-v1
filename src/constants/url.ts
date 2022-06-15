@@ -6,4 +6,6 @@ export const BSportalUrl = {
 export const ApiUrl = {
   login: 'auth/signin',
   getOrganization: 'organisation/getUserOrganization',
+  getProjectList: 'project/getProjectList',
+  getTaskList:'project/getTaskList'
 }
